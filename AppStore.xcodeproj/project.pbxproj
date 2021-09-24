@@ -14,6 +14,7 @@
 		CE6CDB5826FE3C9F00A9E227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6CDB5726FE3C9F00A9E227 /* Assets.xcassets */; };
 		CE6CDB5B26FE3C9F00A9E227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6CDB5926FE3C9F00A9E227 /* LaunchScreen.storyboard */; };
 		CE6CDB6326FE3D6900A9E227 /* BaseTabBarConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDB6226FE3D6900A9E227 /* BaseTabBarConroller.swift */; };
+		CE6CDB6626FE56F000A9E227 /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDB6526FE56F000A9E227 /* AppsSearchController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CE6CDB5A26FE3C9F00A9E227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE6CDB5C26FE3C9F00A9E227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE6CDB6226FE3D6900A9E227 /* BaseTabBarConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarConroller.swift; sourceTree = "<group>"; };
+		CE6CDB6526FE56F000A9E227 /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		CE6CDB4D26FE3C9E00A9E227 /* AppStore */ = {
 			isa = PBXGroup;
 			children = (
+				CE6CDB6426FE56C700A9E227 /* Controller */,
 				CE6CDB4E26FE3C9E00A9E227 /* AppDelegate.swift */,
 				CE6CDB5026FE3C9E00A9E227 /* SceneDelegate.swift */,
 				CE6CDB5226FE3C9E00A9E227 /* ViewController.swift */,
@@ -65,9 +68,17 @@
 				CE6CDB5726FE3C9F00A9E227 /* Assets.xcassets */,
 				CE6CDB5926FE3C9F00A9E227 /* LaunchScreen.storyboard */,
 				CE6CDB5C26FE3C9F00A9E227 /* Info.plist */,
-				CE6CDB6226FE3D6900A9E227 /* BaseTabBarConroller.swift */,
 			);
 			path = AppStore;
+			sourceTree = "<group>";
+		};
+		CE6CDB6426FE56C700A9E227 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE6CDB6226FE3D6900A9E227 /* BaseTabBarConroller.swift */,
+				CE6CDB6526FE56F000A9E227 /* AppsSearchController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 				CE6CDB5326FE3C9E00A9E227 /* ViewController.swift in Sources */,
 				CE6CDB4F26FE3C9E00A9E227 /* AppDelegate.swift in Sources */,
 				CE6CDB5126FE3C9E00A9E227 /* SceneDelegate.swift in Sources */,
+				CE6CDB6626FE56F000A9E227 /* AppsSearchController.swift in Sources */,
 				CE6CDB6326FE3D6900A9E227 /* BaseTabBarConroller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PQNZ2TUC3;
 				INFOPLIST_FILE = AppStore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PQNZ2TUC3;
 				INFOPLIST_FILE = AppStore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
