@@ -10,7 +10,7 @@ import UIKit
 
 class SearchResultCell: UICollectionViewCell {
     
-    let imageView: UIImageView = {
+    let appIconImageView: UIImageView = {
        let iv = UIImageView()
         iv.backgroundColor = .red
         iv.widthAnchor.constraint(equalToConstant: 64).isActive = true
@@ -42,8 +42,10 @@ class SearchResultCell: UICollectionViewCell {
         button.setTitle("GET", for: .normal)
         button.setTitleColor(.blue, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        button.backgroundColor = .darkGray
+        button.backgroundColor = UIColor(white: 0.95, alpha: 1)
         button.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        button.layer.cornerRadius = 16
         return button
     }()
     
@@ -57,16 +59,16 @@ class SearchResultCell: UICollectionViewCell {
             ])
         labelsStackView.axis = .vertical
         
-        let stackView = UIStackView(arrangedSubviews: [imageView, labelsStackView, getButton])
+        let stackView = UIStackView(arrangedSubviews: [appIconImageView, labelsStackView, getButton])
         stackView.spacing = 12
         stackView.alignment = .center
         
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
         stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
     }
     
     required init?(coder: NSCoder) {
