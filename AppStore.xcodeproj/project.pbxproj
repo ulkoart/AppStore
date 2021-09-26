@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE25462C2700E62200CD60A8 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25462B2700E62200CD60A8 /* SearchResultCell.swift */; };
 		CE6CDB4F26FE3C9E00A9E227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDB4E26FE3C9E00A9E227 /* AppDelegate.swift */; };
 		CE6CDB5326FE3C9E00A9E227 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDB5226FE3C9E00A9E227 /* ViewController.swift */; };
 		CE6CDB5626FE3C9E00A9E227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6CDB5426FE3C9E00A9E227 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE25462B2700E62200CD60A8 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		CE6CDB4B26FE3C9E00A9E227 /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6CDB4E26FE3C9E00A9E227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6CDB5226FE3C9E00A9E227 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE25462A2700E5EB00CD60A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE25462B2700E62200CD60A8 /* SearchResultCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CE6CDB4226FE3C9E00A9E227 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		CE6CDB4D26FE3C9E00A9E227 /* AppStore */ = {
 			isa = PBXGroup;
 			children = (
+				CE25462A2700E5EB00CD60A8 /* Views */,
 				CE6CDB6426FE56C700A9E227 /* Controller */,
 				CE6CDB4E26FE3C9E00A9E227 /* AppDelegate.swift */,
 				CE6CDB5226FE3C9E00A9E227 /* ViewController.swift */,
@@ -105,7 +116,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = ulkoart;
 				TargetAttributes = {
 					CE6CDB4A26FE3C9E00A9E227 = {
@@ -153,6 +164,7 @@
 				CE6CDB4F26FE3C9E00A9E227 /* AppDelegate.swift in Sources */,
 				CE6CDB6626FE56F000A9E227 /* AppsSearchController.swift in Sources */,
 				CE6CDB6326FE3D6900A9E227 /* BaseTabBarController.swift in Sources */,
+				CE25462C2700E62200CD60A8 /* SearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +216,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -264,6 +277,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
