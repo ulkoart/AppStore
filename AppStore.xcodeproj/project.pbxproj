@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE05EA782705AF61002BEE4C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05EA772705AF61002BEE4C /* UIView+Layout.swift */; };
 		CE25462C2700E62200CD60A8 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25462B2700E62200CD60A8 /* SearchResultCell.swift */; };
-		CE25462F2700F39600CD60A8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25462E2700F39600CD60A8 /* UIView+Layout.swift */; };
 		CE25463127010B4500CD60A8 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25463027010B4500CD60A8 /* VerticalStackView.swift */; };
 		CE6CDB4F26FE3C9E00A9E227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDB4E26FE3C9E00A9E227 /* AppDelegate.swift */; };
 		CE6CDB5326FE3C9E00A9E227 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDB5226FE3C9E00A9E227 /* ViewController.swift */; };
@@ -20,8 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE05EA772705AF61002BEE4C /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		CE25462B2700E62200CD60A8 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
-		CE25462E2700F39600CD60A8 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "../../../../../Downloads/code 3/code/01 Introduction - Setting Up UI/UIView+Layout.swift"; sourceTree = "<group>"; };
 		CE25463027010B4500CD60A8 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		CE6CDB4B26FE3C9E00A9E227 /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6CDB4E26FE3C9E00A9E227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +56,8 @@
 		CE25462D2700F35700CD60A8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CE25462E2700F39600CD60A8 /* UIView+Layout.swift */,
 				CE25463027010B4500CD60A8 /* VerticalStackView.swift */,
+				CE05EA772705AF61002BEE4C /* UIView+Layout.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -178,8 +178,8 @@
 				CE6CDB4F26FE3C9E00A9E227 /* AppDelegate.swift in Sources */,
 				CE6CDB6626FE56F000A9E227 /* AppsSearchController.swift in Sources */,
 				CE6CDB6326FE3D6900A9E227 /* BaseTabBarController.swift in Sources */,
-				CE25462F2700F39600CD60A8 /* UIView+Layout.swift in Sources */,
 				CE25462C2700E62200CD60A8 /* SearchResultCell.swift in Sources */,
+				CE05EA782705AF61002BEE4C /* UIView+Layout.swift in Sources */,
 				CE25463127010B4500CD60A8 /* VerticalStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
