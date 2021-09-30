@@ -14,7 +14,7 @@ class ServiceAPI {
     
     private init() {}
     
-    func fetchApps(completion: @escaping ([Result])->() ) {
+    func fetchApps(completion: @escaping ([Result], Error?)->() ) {
         let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
         
         guard let url = URL(string: urlString) else { return }
@@ -22,6 +22,7 @@ class ServiceAPI {
         URLSession.shared.dataTask(with: url) { (data, resp, err) in
             if let err = err {
                 print(err.localizedDescription)
+                completion([], nil)
             }
             
             guard let data = data else { return }
@@ -29,9 +30,10 @@ class ServiceAPI {
             do {
                 let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
                 
-                completion(searchResult.results)
+                completion(searchResult.results, nil)
             } catch {
                 print(error.localizedDescription)
+                completion([], error)
             }
             
         }.resume()

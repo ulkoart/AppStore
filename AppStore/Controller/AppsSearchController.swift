@@ -22,7 +22,13 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
     }
     
     fileprivate func fetchITunesApps() {
-        ServiceAPI.shared.fetchApps { [weak self] result in
+        ServiceAPI.shared.fetchApps { [weak self] result, error in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
             self?.appResults = result
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
