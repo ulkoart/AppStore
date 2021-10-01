@@ -14,8 +14,8 @@ class ServiceAPI {
     
     private init() {}
     
-    func fetchApps(completion: @escaping ([Result], Error?)->() ) {
-        let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
+    func fetchApps(searchTerm: String, completion: @escaping ([Result], Error?)->() ) {
+        let urlString = "https://itunes.apple.com/search?term=\(searchTerm)&entity=software"
         
         guard let url = URL(string: urlString) else { return }
         
