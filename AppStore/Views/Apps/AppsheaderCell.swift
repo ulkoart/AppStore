@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppsheaderCell: UICollectionViewCell {
+class AppsHeaderCell: UICollectionViewCell {
     
     let companyLabel = UILabel(text: "Facebook", font: .boldSystemFont(ofSize: 12))
     let titleLabel = UILabel(text: "Keeping up with friends is faster then ever", font: .systemFont(ofSize: 24))

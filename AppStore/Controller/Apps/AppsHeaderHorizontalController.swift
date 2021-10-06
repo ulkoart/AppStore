@@ -16,7 +16,7 @@ class AppsHeaderHorizontalController: BaseListController, UICollectionViewDelega
         super.viewDidLoad()
         collectionView.backgroundColor = .white
         
-        collectionView.register(AppsheaderCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(AppsHeaderCell.self, forCellWithReuseIdentifier: cellId)
         
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
