@@ -39,4 +39,23 @@ class ServiceAPI {
         }.resume()
     }
     
+    func fetchGames(complition: @escaping (AppGroup?, Error?) -> () ) {
+        guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-free/games/10/explicit.json") else { return }
+        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+            if let err = err {
+                complition(nil, err)
+            }
+            
+            do {
+                let appGroup = try JSONDecoder().decode(AppGroup.self, from: data!)
+                complition(appGroup, nil)
+            } catch {
+                complition(nil, err)
+            }
+            
+           
+            
+        }.resume()
+    }
+    
 }
