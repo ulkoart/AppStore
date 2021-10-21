@@ -40,17 +40,17 @@ class ServiceAPI {
     }
     
     func fetchTopGrossing(completion: @escaping (AppGroup?, Error?) -> () ) {
-        let urlString = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-grossing/all/10/explicit.json"
+        let urlString = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/10/apps.json"
         fetchAppGroup(urlString: urlString, completion: completion)
     }
     
     func fetchGames(completion: @escaping (AppGroup?, Error?) -> () ) {
-        let urlString = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-free/games/10/explicit.json"
+        let urlString = "https://rss.applemarketingtools.com/api/v2/us/apps/top-paid/10/apps.json"
         fetchAppGroup(urlString: urlString, completion: completion)
     }
     
     func fetchAppGroup(completion: @escaping (AppGroup?, Error?) -> () ) {
-        let urlString = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-free/all/10/explicit.json"
+        let urlString = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/10/apps.json"
         fetchAppGroup(urlString: urlString, completion: completion)
     }
     
@@ -67,6 +67,24 @@ class ServiceAPI {
                 completion(nil, err)
             }
         }.resume()
+    }
+    
+    func fetchSocialApps(completion: @escaping ([SocialApp]?, Error?) -> () ) {
+        let urlString = "https://api.letsbuildthatapp.com/appstore/social"
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, resp, err) in
+            if let err = err {
+                completion(nil, err)
+            }
+            do {
+                let objects = try JSONDecoder().decode([SocialApp].self, from: data!)
+                completion(objects, nil)
+            } catch {
+                completion(nil, err)
+            }
+        }.resume()
+        
     }
     
 }

@@ -29,6 +29,7 @@
 		CE6CDB5B26FE3C9F00A9E227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6CDB5926FE3C9F00A9E227 /* LaunchScreen.storyboard */; };
 		CE6CDB6326FE3D6900A9E227 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDB6226FE3D6900A9E227 /* BaseTabBarController.swift */; };
 		CE6CDB6626FE56F000A9E227 /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDB6526FE56F000A9E227 /* AppsSearchController.swift */; };
+		CE70983627219EF200F9CA81 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70983527219EF200F9CA81 /* SocialApp.swift */; };
 		CE9AD9EF2710851100386C37 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9AD9EE2710851100386C37 /* AppGroup.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		CE6CDB5C26FE3C9F00A9E227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE6CDB6226FE3D6900A9E227 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		CE6CDB6526FE56F000A9E227 /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
+		CE70983527219EF200F9CA81 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		CE9AD9EE2710851100386C37 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		DA822C912C86CBD73CC9B1D8 /* Pods-AppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore.debug.xcconfig"; path = "Target Support Files/Pods-AppStore/Pods-AppStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +98,7 @@
 			children = (
 				CE05EA7B2705B813002BEE4C /* SearchResult.swift */,
 				CE9AD9EE2710851100386C37 /* AppGroup.swift */,
+				CE70983527219EF200F9CA81 /* SocialApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			files = (
 				CE6CDB5326FE3C9E00A9E227 /* ViewController.swift in Sources */,
 				CE6CDB4F26FE3C9E00A9E227 /* AppDelegate.swift in Sources */,
+				CE70983627219EF200F9CA81 /* SocialApp.swift in Sources */,
 				CE05EA7C2705B813002BEE4C /* SearchResult.swift in Sources */,
 				CE9AD9EF2710851100386C37 /* AppGroup.swift in Sources */,
 				CE638699270D975A0090396C /* AppsPageController.swift in Sources */,
