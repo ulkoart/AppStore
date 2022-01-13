@@ -58,7 +58,7 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
                     return
                 }
                 
-                self?.appResults = result
+                self?.appResults = result?.results ?? []
                 DispatchQueue.main.async {
                     self?.collectionView.reloadData()
                 }
@@ -75,7 +75,7 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
                 return
             }
             
-            self?.appResults = result
+            self?.appResults = result?.results ?? []
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
             }
