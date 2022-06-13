@@ -15,6 +15,15 @@ class AppsHorizontalController: HorizontalSnappingController {
     let lineSpacing: CGFloat = 10
     
     var appGroup: AppGroup?
+	
+	var didSelectHandler: ((FeedResult) -> ())?
+	
+	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		if let app = appGroup?.feed.results[indexPath.item] {
+			didSelectHandler?(app)
+		}
+		
+	}
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +31,7 @@ class AppsHorizontalController: HorizontalSnappingController {
         collectionView.register(AppRowCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
     }
+	
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return appGroup?.feed.results.count ?? 0
@@ -38,8 +48,6 @@ class AppsHorizontalController: HorizontalSnappingController {
 
         return cell
     }
-    
-
 }
 
 extension AppsHorizontalController: UICollectionViewDelegateFlowLayout {

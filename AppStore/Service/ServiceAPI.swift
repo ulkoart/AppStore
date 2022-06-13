@@ -51,7 +51,6 @@ class ServiceAPI {
                 completion(nil, err)
             }
             do {
-
                 let objects = try JSONDecoder().decode(T.self, from: data!)
                 completion(objects, nil)
             } catch {
