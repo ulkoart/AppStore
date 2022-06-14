@@ -9,10 +9,11 @@
 import UIKit
 
 extension UILabel {
-    convenience init(text: String, font: UIFont) {
+	convenience init(text: String, font: UIFont, numberOfLines: Int = 1) {
         self.init(frame: .zero)
         self.font = font
         self.text = text
+		self.numberOfLines = numberOfLines
     }
 }
 
@@ -30,4 +31,11 @@ extension UIButton {
         self.init(type: .system)
         self.setTitle(title, for: .normal)
     }
+}
+
+extension UIStackView {
+	convenience init(arrangedSubviews: [UIView], customSpacing: CGFloat = 0) {
+		self.init(arrangedSubviews: arrangedSubviews)
+		self.spacing = customSpacing
+	}
 }

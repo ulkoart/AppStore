@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6746A06C16A4385BFBD1C182 /* Pods_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FD8099D614B2475266C9DD /* Pods_AppStore.framework */; };
 		9ACAB72B285759B700DF12E0 /* AppDeatilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB72A285759B700DF12E0 /* AppDeatilController.swift */; };
+		9ACAB72E2857625B00DF12E0 /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB72D2857625B00DF12E0 /* AppDetailCell.swift */; };
 		CE05EA782705AF61002BEE4C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05EA772705AF61002BEE4C /* UIView+Layout.swift */; };
 		CE05EA7C2705B813002BEE4C /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05EA7B2705B813002BEE4C /* SearchResult.swift */; };
 		CE05EA812705C79C002BEE4C /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05EA802705C79C002BEE4C /* ServiceAPI.swift */; };
@@ -40,6 +41,7 @@
 		4BDDC91F3219119572561007 /* Pods-AppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore.release.xcconfig"; path = "Target Support Files/Pods-AppStore/Pods-AppStore.release.xcconfig"; sourceTree = "<group>"; };
 		90FD8099D614B2475266C9DD /* Pods_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ACAB72A285759B700DF12E0 /* AppDeatilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDeatilController.swift; sourceTree = "<group>"; };
+		9ACAB72D2857625B00DF12E0 /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
 		CE05EA772705AF61002BEE4C /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		CE05EA7B2705B813002BEE4C /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		CE05EA802705C79C002BEE4C /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		9ACAB72C2857623000DF12E0 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				9ACAB72D2857625B00DF12E0 /* AppDetailCell.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		CE05EA7A2705B803002BEE4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +177,7 @@
 		CE63869D270D9A960090396C /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				9ACAB72C2857623000DF12E0 /* Details */,
 				CE63869E270D9AA30090396C /* AppsGroupCell.swift */,
 				CE6386A2270DBABA0090396C /* AppRowCell.swift */,
 				CE6386A6270E10150090396C /* AppsPageHeader.swift */,
@@ -348,6 +359,7 @@
 				CE6386AB270E1A040090396C /* AppsHeaderCell.swift in Sources */,
 				CE6CDB6626FE56F000A9E227 /* AppsSearchController.swift in Sources */,
 				CE63869B270D97E60090396C /* BaseListController.swift in Sources */,
+				9ACAB72E2857625B00DF12E0 /* AppDetailCell.swift in Sources */,
 				CE6386A3270DBABA0090396C /* AppRowCell.swift in Sources */,
 				CE6CDB6326FE3D6900A9E227 /* BaseTabBarController.swift in Sources */,
 				CE25462C2700E62200CD60A8 /* SearchResultCell.swift in Sources */,
