@@ -10,6 +10,15 @@ import UIKit
 
 class AppDetailCell: UICollectionViewCell {
 	
+	var app: Result! {
+		didSet {
+			nameLabel.text = app?.trackName
+			releaseNoteslabel.text = app?.releaseNotes
+			appIconImageView.sd_setImage(with: URL(string: app?.artworkUrl100 ?? ""))
+			priceButton.setTitle(app?.formattedPrice, for: .normal)
+		}
+	}
+	
 	let appIconImageView = UIImageView(cornerRadius: 16)
 	let nameLabel = UILabel(text: "App Name", font: .boldSystemFont(ofSize: 24), numberOfLines: 2)
 	let priceButton = UIButton(title: "$4.99")
@@ -18,6 +27,8 @@ class AppDetailCell: UICollectionViewCell {
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
+		
+		backgroundColor = .lightGray
 		
 		appIconImageView.backgroundColor = .systemGray
 		appIconImageView.constrainWidth(constant: 140)
