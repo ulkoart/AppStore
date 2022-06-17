@@ -78,7 +78,6 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
 		} else {
 			height = 280
 		}
-		
 		return .init(width: view.frame.width, height: height)
 	}
 	
