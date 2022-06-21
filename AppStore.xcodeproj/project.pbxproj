@@ -16,6 +16,8 @@
 		9ACAB75F285CC46800DF12E0 /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB75E285CC46800DF12E0 /* ReviewsController.swift */; };
 		9ACAB761285CC70100DF12E0 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB760285CC70100DF12E0 /* ReviewCell.swift */; };
 		9ACAB7632860471F00DF12E0 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB7622860471F00DF12E0 /* Reviews.swift */; };
+		9ACAB93628619F5400DF12E0 /* TodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB93528619F5400DF12E0 /* TodayController.swift */; };
+		9ACAB9392861A0A800DF12E0 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB9382861A0A800DF12E0 /* TodayCell.swift */; };
 		CE05EA782705AF61002BEE4C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05EA772705AF61002BEE4C /* UIView+Layout.swift */; };
 		CE05EA7C2705B813002BEE4C /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05EA7B2705B813002BEE4C /* SearchResult.swift */; };
 		CE05EA812705C79C002BEE4C /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05EA802705C79C002BEE4C /* ServiceAPI.swift */; };
@@ -54,6 +56,8 @@
 		9ACAB75E285CC46800DF12E0 /* ReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsController.swift; sourceTree = "<group>"; };
 		9ACAB760285CC70100DF12E0 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		9ACAB7622860471F00DF12E0 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		9ACAB93528619F5400DF12E0 /* TodayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayController.swift; sourceTree = "<group>"; };
+		9ACAB9382861A0A800DF12E0 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		CE05EA772705AF61002BEE4C /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		CE05EA7B2705B813002BEE4C /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		CE05EA802705C79C002BEE4C /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
@@ -134,6 +138,22 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		9ACAB93428619F3D00DF12E0 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				9ACAB93528619F5400DF12E0 /* TodayController.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		9ACAB9372861A09C00DF12E0 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				9ACAB9382861A0A800DF12E0 /* TodayCell.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
 		CE05EA7A2705B803002BEE4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +176,7 @@
 		CE25462A2700E5EB00CD60A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9ACAB9372861A09C00DF12E0 /* Today */,
 				CE63869D270D9A960090396C /* Apps */,
 				CE25462B2700E62200CD60A8 /* SearchResultCell.swift */,
 			);
@@ -243,6 +264,7 @@
 		CE6CDB6426FE56C700A9E227 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9ACAB93428619F3D00DF12E0 /* Today */,
 				CE63869C270D99620090396C /* Search */,
 				CE638697270D974C0090396C /* Apps */,
 				CE6CDB6226FE3D6900A9E227 /* BaseTabBarController.swift */,
@@ -378,6 +400,7 @@
 				CE6386AB270E1A040090396C /* AppsHeaderCell.swift in Sources */,
 				CE6CDB6626FE56F000A9E227 /* AppsSearchController.swift in Sources */,
 				9ACAB75D285CBE7A00DF12E0 /* ReviewRowCell.swift in Sources */,
+				9ACAB9392861A0A800DF12E0 /* TodayCell.swift in Sources */,
 				CE63869B270D97E60090396C /* BaseListController.swift in Sources */,
 				9ACAB72E2857625B00DF12E0 /* AppDetailCell.swift in Sources */,
 				CE6386A3270DBABA0090396C /* AppRowCell.swift in Sources */,
@@ -389,6 +412,7 @@
 				9ACAB731285C551C00DF12E0 /* PreviewCell.swift in Sources */,
 				9ACAB75F285CC46800DF12E0 /* ReviewsController.swift in Sources */,
 				9ACAB7632860471F00DF12E0 /* Reviews.swift in Sources */,
+				9ACAB93628619F5400DF12E0 /* TodayController.swift in Sources */,
 				CE05EA782705AF61002BEE4C /* UIView+Layout.swift in Sources */,
 				CE6386A5270DBB6C0090396C /* Extensions.swift in Sources */,
 				CE05EA812705C79C002BEE4C /* ServiceAPI.swift in Sources */,

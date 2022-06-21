@@ -59,7 +59,7 @@ final class AppDetailController: BaseListController, UICollectionViewDelegateFlo
 				return
 			}
 			self.reviews = reviews
-			reviews?.feed.entry.forEach { print($0.rating.label) }
+			// reviews?.feed.entry.forEach { print($0.rating.label) }
 			DispatchQueue.main.async {
 				self.collectionView.reloadData()
 			}
