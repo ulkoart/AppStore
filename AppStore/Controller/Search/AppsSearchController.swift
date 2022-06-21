@@ -51,10 +51,10 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             
-            ServiceAPI.shared.fetchApps(searchTerm: searchText) { [weak self] result, error in
+            ServiceAPI.shared.fetchApps(searchTerm: searchText) { [weak self] result, err in
                 
-                if let error = error {
-                    print(error.localizedDescription)
+                if let err = err {
+                    print(err.localizedDescription)
                     return
                 }
                 
@@ -97,5 +97,12 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
         enterSearchTermLabel.isHidden = !appResults.isEmpty
         return appResults.count
     }
+	
+	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let appId = appResults[indexPath.item].trackId
+		let appDetailContriller = AppDetailController(appId: String(appId))
+
+		navigationController?.pushViewController(appDetailContriller, animated: true)
+	}
 
 }

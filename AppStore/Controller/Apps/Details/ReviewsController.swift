@@ -47,7 +47,6 @@ class ReviewsController: HorizontalSnappingController, UICollectionViewDelegateF
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		print(view.frame.size)
 		return .init(width: view.frame.width - 48, height: 280)
 	}
 	
