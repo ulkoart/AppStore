@@ -13,14 +13,29 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 //	fileprivate let cellId = "cellId"
 //	fileprivate let multipleAppCell = "multipleAppCellId"
 	
-	let items = [
-		TodayItem(catecory: "THE DAILY LIST", title: "Test-Drive These CarPlay App", image: UIImage(named: "garden")!, description: "", backgroundColor: .white, cellType: .multiple),
-		TodayItem(catecory: "FILE HACK", title: "Utilizing your Time", image: UIImage(named: "garden")!, description: "All the tools and apps you need to intelligenty orgznize your live to right way.", backgroundColor: .white, cellType: .signle),
-		TodayItem(catecory: "HOLIDAYS", title: "Travel on a Budget", image: UIImage(named: "holiday")!, description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .signle)
-	]
+//	let items = [
+//		TodayItem(catecory: "THE DAILY LIST", title: "Test-Drive These CarPlay App", image: UIImage(named: "garden")!, description: "", backgroundColor: .white, cellType: .multiple),
+//		TodayItem(catecory: "FILE HACK", title: "Utilizing your Time", image: UIImage(named: "garden")!, description: "All the tools and apps you need to intelligenty orgznize your live to right way.", backgroundColor: .white, cellType: .signle),
+//		TodayItem(catecory: "HOLIDAYS", title: "Travel on a Budget", image: UIImage(named: "holiday")!, description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .signle)
+//	]
+	
+	var items = [TodayItem]()
+	
+	let activityIndicator: UIActivityIndicatorView = {
+		let avi = UIActivityIndicatorView(style: .whiteLarge)
+		avi.color = .darkGray
+		avi.hidesWhenStopped = true
+		return avi
+	}()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		view.addSubview(activityIndicator)
+		activityIndicator.centerInSuperview()
+		activityIndicator.startAnimating()
+		
+		fetchData()
 		
 		navigationController?.isNavigationBarHidden = true
 		
@@ -29,6 +44,36 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 		collectionView.register(TodayCell.self, forCellWithReuseIdentifier: TodayItem.CellType.signle.rawValue)
 		collectionView.register(TodayMultipleAppCell.self, forCellWithReuseIdentifier: TodayItem.CellType.multiple.rawValue)
 		
+	}
+	
+	func fetchData() {
+		let dispatchGroup = DispatchGroup()
+		var topGrossingGroup: AppGroup?
+		var gamesGroup: AppGroup?
+
+		dispatchGroup.enter()
+		ServiceAPI.shared.fetchTopGrossing { (appGroup, err) in
+			topGrossingGroup = appGroup
+			dispatchGroup.leave()
+		}
+		
+		dispatchGroup.enter()
+		ServiceAPI.shared.fetchGames { (appGroup, err) in
+			gamesGroup = appGroup
+			dispatchGroup.leave()
+		}
+		
+
+		dispatchGroup.notify(queue: .main) {
+			print("finish")
+			self.collectionView.reloadData()
+			self.items = [
+				TodayItem(catecory: "THE DAILY LIST", title: topGrossingGroup?.feed.title ?? "", image: UIImage(named: "garden")!, description: "", backgroundColor: .white, cellType: .multiple, apps: topGrossingGroup?.feed.results ?? []),
+				TodayItem(catecory: "FILE HACK", title: "Utilizing your Time", image: UIImage(named: "garden")!, description: "All the tools and apps you need to intelligenty orgznize your live to right way.", backgroundColor: .white, cellType: .signle, apps: []),
+				TodayItem(catecory: "HOLIDAYS", title: "Travel on a Budget", image: UIImage(named: "holiday")!, description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .signle, apps: [])
+			]
+			self.activityIndicator.stopAnimating()
+		}
 	}
 	
 	var appFullscreenController: AppFullscreenController!
@@ -110,11 +155,6 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 			// self.tabBarController?.tabBar.transform = .identity
 			self.tabBarController?.tabBar.frame.origin.y -= 100
 			
-//			guard let cell = self.appFullscreenController.tableView.cellForRow(at: [0,0]) as? AppFullscreenHeaderCell else { return }
-//			cell.todayCell.topConstraint.constant = 24
-//			cell.layoutIfNeeded()
-			
-			
 		}, completion: { _ in
 			self.appFullscreenController.view.removeFromSuperview()
 			self.appFullscreenController.removeFromParent()
@@ -134,16 +174,6 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 		cell.todayItem = items[indexPath.item]
 		
 		return cell
-		
-//		if indexPath.item == 0 {
-//			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: multipleAppCell, for: indexPath) as! TodayMultipleAppCell
-//			cell.todayItem = items[indexPath.item]
-//			return cell
-//		}
-//
-//		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! TodayCell
-//		cell.todayItem = items[indexPath.item]
-//		return cell
 	}
 	
 	static let cellSize: CGFloat = 500

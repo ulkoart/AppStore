@@ -19,15 +19,6 @@ class TodayMultipleAppsController: BaseListController, UICollectionViewDelegateF
 		collectionView.backgroundColor = .white
 		collectionView.isScrollEnabled = false
 		collectionView.register(MultipleAppCell.self, forCellWithReuseIdentifier: cellId)
-		
-		ServiceAPI.shared.fetchTopGrossing { [weak self] (appGroup, err) in
-			self?.results = appGroup?.feed.results ?? []
-
-			DispatchQueue.main.async {
-				self?.collectionView.reloadData()
-			}
-			
-		}
 	}
 	
 	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,9 +32,7 @@ class TodayMultipleAppsController: BaseListController, UICollectionViewDelegateF
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		
 		let height: CGFloat = (view.frame.height - 3 * spacing) / 4
-		
 		return .init(width: view.frame.width, height: height)
 	}
 	
