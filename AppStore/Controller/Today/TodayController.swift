@@ -14,9 +14,9 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 //	fileprivate let multipleAppCell = "multipleAppCellId"
 	
 	let items = [
+		TodayItem(catecory: "THE DAILY LIST", title: "Test-Drive These CarPlay App", image: UIImage(named: "garden")!, description: "", backgroundColor: .white, cellType: .multiple),
 		TodayItem(catecory: "FILE HACK", title: "Utilizing your Time", image: UIImage(named: "garden")!, description: "All the tools and apps you need to intelligenty orgznize your live to right way.", backgroundColor: .white, cellType: .signle),
-		TodayItem(catecory: "HOLIDAYS", title: "Travel on a Budget", image: UIImage(named: "holiday")!, description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .signle),
-		TodayItem(catecory: "THE DAILY LIST", title: "Test-Drive These CarPlay App", image: UIImage(named: "garden")!, description: "", backgroundColor: .white, cellType: .multiple)
+		TodayItem(catecory: "HOLIDAYS", title: "Travel on a Budget", image: UIImage(named: "holiday")!, description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .signle)
 	]
 	
 	override func viewDidLoad() {
