@@ -10,15 +10,6 @@ import UIKit
 
 class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 	
-//	fileprivate let cellId = "cellId"
-//	fileprivate let multipleAppCell = "multipleAppCellId"
-	
-//	let items = [
-//		TodayItem(catecory: "THE DAILY LIST", title: "Test-Drive These CarPlay App", image: UIImage(named: "garden")!, description: "", backgroundColor: .white, cellType: .multiple),
-//		TodayItem(catecory: "FILE HACK", title: "Utilizing your Time", image: UIImage(named: "garden")!, description: "All the tools and apps you need to intelligenty orgznize your live to right way.", backgroundColor: .white, cellType: .signle),
-//		TodayItem(catecory: "HOLIDAYS", title: "Travel on a Budget", image: UIImage(named: "holiday")!, description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .signle)
-//	]
-	
 	var items = [TodayItem]()
 	
 	let activityIndicator: UIActivityIndicatorView = {
@@ -84,6 +75,14 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 	var heightConstraint: NSLayoutConstraint?
 	
 	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		
+		if items[indexPath.item].cellType == .multiple {
+			let fullController = TodayMultipleAppsController(mode: .fullscreen)
+			fullController.results = self.items[indexPath.item].apps
+			fullController.modalPresentationStyle = .fullScreen
+			present(fullController, animated: true)
+			return
+		}
 		
 		let appFullscreenController = AppFullscreenController()
 		appFullscreenController.todayItem = items[indexPath.row]
