@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
+class TodayController: BaseListController, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
 	
 	var items = [TodayItem]()
 	var startingFrame: CGRect?
@@ -22,8 +22,14 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 		return avi
 	}()
 	
+	let blurVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		view.addSubview(blurVisualEffectView)
+		blurVisualEffectView.fillSuperview()
+		blurVisualEffectView.alpha = 0
 		
 		view.addSubview(activityIndicator)
 		activityIndicator.centerInSuperview()
@@ -62,8 +68,8 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 			print("finish")
 			self.collectionView.reloadData()
 			self.items = [
-				TodayItem(catecory: "THE DAILY LIST", title: topGrossingGroup?.feed.title ?? "", image: UIImage(named: "garden")!, description: "", backgroundColor: .white, cellType: .multiple, apps: topGrossingGroup?.feed.results ?? []),
 				TodayItem(catecory: "FILE HACK", title: "Utilizing your Time", image: UIImage(named: "garden")!, description: "All the tools and apps you need to intelligenty orgznize your live to right way.", backgroundColor: .white, cellType: .signle, apps: []),
+				TodayItem(catecory: "THE DAILY LIST", title: topGrossingGroup?.feed.title ?? "", image: UIImage(named: "garden")!, description: "", backgroundColor: .white, cellType: .multiple, apps: topGrossingGroup?.feed.results ?? []),
 				TodayItem(catecory: "HOLIDAYS", title: "Travel on a Budget", image: UIImage(named: "holiday")!, description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .signle, apps: [])
 			]
 			
@@ -93,10 +99,32 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 		let appFullscreenController = AppFullscreenController()
 		appFullscreenController.todayItem = items[indexPath.row]
 		appFullscreenController.dismissHandler = {
-			self.handleRemoveRedView()
+			self.handleAppFullscreenDismissal()
 		}
 		appFullscreenController.view.layer.cornerRadius = 16
 		self.appFullscreenController = appFullscreenController
+		 
+		let gesture = UIPanGestureRecognizer(target: self, action: #selector(handleDrag))
+		gesture.delegate = self
+		
+		appFullscreenController.view.addGestureRecognizer(gesture)
+	}
+	
+	func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+		return true
+	}
+	
+	@objc func handleDrag(gesture: UIPanGestureRecognizer) {
+		let translationY = gesture.translation(in: appFullscreenController.view).y
+		print(translationY)
+
+		if gesture.state == .changed {
+			let scale = 1 - translationY / 1000
+			let transform: CGAffineTransform = .init(scaleX: scale, y: scale)
+			self.appFullscreenController.view.transform = transform
+		} else if gesture.state == .ended {
+			handleAppFullscreenDismissal()
+		}
 	}
 	
 	fileprivate func setupStartingCellFrame(_ indexPath: IndexPath) {
@@ -122,6 +150,8 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 	
 	fileprivate func beginAnimationAppFullscreen () {
 		UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+			
+			self.blurVisualEffectView.alpha = 1
 			
 			self.anchoredConstraint?.top?.constant = 0
 			self.anchoredConstraint?.leading?.constant = 0
@@ -152,8 +182,11 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 	}
 
 	
-	@objc func handleRemoveRedView() {
+	@objc func handleAppFullscreenDismissal() {
 		UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+			
+			self.blurVisualEffectView.alpha = 0
+			self.appFullscreenController.view.transform = .identity
 			
 			self.appFullscreenController.tableView.contentOffset = .zero
 			
