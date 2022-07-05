@@ -229,7 +229,7 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout, U
 			guard let cell = self.appFullscreenController.tableView.cellForRow(at: [0,0]) as? AppFullscreenHeaderCell else { return }
 			
 			cell.todayCell.topConstraint.constant = 24
-			cell.closeButton.alpha = 0
+			self.appFullscreenController.closeButton.alpha = 0
 			cell.layoutIfNeeded()
 			
 			
