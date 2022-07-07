@@ -25,7 +25,7 @@ class BetterSnappingLayout: UICollectionViewFlowLayout {
 		}
 		
 		let targetRect = CGRect(x: nextX, y: 0, width: collectionView.bounds.size.width, height: collectionView.bounds.size.height)
-		
+
 		var offsetAdjustment = CGFloat.greatestFiniteMagnitude
 		
 		let horizontalOffset = proposedContentOffset.x + collectionView.contentInset.left
@@ -38,7 +38,7 @@ class BetterSnappingLayout: UICollectionViewFlowLayout {
 				offsetAdjustment = itemOffset - horizontalOffset
 			}
 		})
-		
+
 		return CGPoint(x: proposedContentOffset.x + offsetAdjustment, y: proposedContentOffset.y)
 	}
 	

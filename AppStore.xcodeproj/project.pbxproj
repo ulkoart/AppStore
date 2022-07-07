@@ -10,6 +10,9 @@
 		6746A06C16A4385BFBD1C182 /* Pods_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FD8099D614B2475266C9DD /* Pods_AppStore.framework */; };
 		9A3D5D432862FBCB009E6AF6 /* AppFullScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D5D422862FBCB009E6AF6 /* AppFullScreenController.swift */; };
 		9A3D5D452862FEC1009E6AF6 /* AppFullscreenDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D5D442862FEC1009E6AF6 /* AppFullscreenDescriptionCell.swift */; };
+		9A4481092877093F0069AC0B /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4481082877093F0069AC0B /* MusicController.swift */; };
+		9A44810C28770B5A0069AC0B /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A44810B28770B5A0069AC0B /* TrackCell.swift */; };
+		9A44810E28770EF40069AC0B /* MusicLoadingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A44810D28770EF40069AC0B /* MusicLoadingFooter.swift */; };
 		9ACAB72B285759B700DF12E0 /* AppDeatilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB72A285759B700DF12E0 /* AppDeatilController.swift */; };
 		9ACAB72E2857625B00DF12E0 /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB72D2857625B00DF12E0 /* AppDetailCell.swift */; };
 		9ACAB731285C551C00DF12E0 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB730285C551C00DF12E0 /* PreviewCell.swift */; };
@@ -59,6 +62,9 @@
 		90FD8099D614B2475266C9DD /* Pods_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3D5D422862FBCB009E6AF6 /* AppFullScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullScreenController.swift; sourceTree = "<group>"; };
 		9A3D5D442862FEC1009E6AF6 /* AppFullscreenDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenDescriptionCell.swift; sourceTree = "<group>"; };
+		9A4481082877093F0069AC0B /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
+		9A44810B28770B5A0069AC0B /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		9A44810D28770EF40069AC0B /* MusicLoadingFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLoadingFooter.swift; sourceTree = "<group>"; };
 		9ACAB72A285759B700DF12E0 /* AppDeatilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDeatilController.swift; sourceTree = "<group>"; };
 		9ACAB72D2857625B00DF12E0 /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
 		9ACAB730285C551C00DF12E0 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
@@ -135,6 +141,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9A448107287709300069AC0B /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				9A4481082877093F0069AC0B /* MusicController.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		9A44810A28770B520069AC0B /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				9A44810B28770B5A0069AC0B /* TrackCell.swift */,
+				9A44810D28770EF40069AC0B /* MusicLoadingFooter.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		9ACAB729285759A000DF12E0 /* Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +226,7 @@
 		CE25462A2700E5EB00CD60A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9A44810A28770B520069AC0B /* Music */,
 				9ACAB9372861A09C00DF12E0 /* Today */,
 				CE63869D270D9A960090396C /* Apps */,
 				CE25462B2700E62200CD60A8 /* SearchResultCell.swift */,
@@ -291,6 +315,7 @@
 		CE6CDB6426FE56C700A9E227 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9A448107287709300069AC0B /* Music */,
 				9ACAB93428619F3D00DF12E0 /* Today */,
 				CE63869C270D99620090396C /* Search */,
 				CE638697270D974C0090396C /* Apps */,
@@ -421,12 +446,14 @@
 				CE6CDB4F26FE3C9E00A9E227 /* AppDelegate.swift in Sources */,
 				9ACAB761285CC70100DF12E0 /* ReviewCell.swift in Sources */,
 				CE70983627219EF200F9CA81 /* SocialApp.swift in Sources */,
+				9A44810E28770EF40069AC0B /* MusicLoadingFooter.swift in Sources */,
 				CE05EA7C2705B813002BEE4C /* SearchResult.swift in Sources */,
 				CE9AD9EF2710851100386C37 /* AppGroup.swift in Sources */,
 				CE638699270D975A0090396C /* AppsPageController.swift in Sources */,
 				CE6386AB270E1A040090396C /* AppsHeaderCell.swift in Sources */,
 				CE6CDB6626FE56F000A9E227 /* AppsSearchController.swift in Sources */,
 				9ACAB75D285CBE7A00DF12E0 /* ReviewRowCell.swift in Sources */,
+				9A4481092877093F0069AC0B /* MusicController.swift in Sources */,
 				9ACAB9392861A0A800DF12E0 /* TodayCell.swift in Sources */,
 				9ACCC91C2865D44800A8F48A /* TodayMultipleAppsController.swift in Sources */,
 				9ACCC91E2865D50600A8F48A /* MultipleAppCell.swift in Sources */,
@@ -455,6 +482,7 @@
 				CE898ACB279155DF007115BF /* HorizontalSnappingController.swift in Sources */,
 				CE6386A1270DA1AE0090396C /* AppsHorizontalController.swift in Sources */,
 				CE63869F270D9AA30090396C /* AppsGroupCell.swift in Sources */,
+				9A44810C28770B5A0069AC0B /* TrackCell.swift in Sources */,
 				CE6386A9270E16170090396C /* AppsHeaderHorizontalController.swift in Sources */,
 				9ACCC7AC28659B2F00A8F48A /* TodayMultipleAppCell.swift in Sources */,
 			);
@@ -606,7 +634,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PQNZ2TUC3;
 				INFOPLIST_FILE = AppStore/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -626,7 +654,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PQNZ2TUC3;
 				INFOPLIST_FILE = AppStore/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
