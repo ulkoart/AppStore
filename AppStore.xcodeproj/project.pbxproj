@@ -13,6 +13,7 @@
 		9A4481092877093F0069AC0B /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4481082877093F0069AC0B /* MusicController.swift */; };
 		9A44810C28770B5A0069AC0B /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A44810B28770B5A0069AC0B /* TrackCell.swift */; };
 		9A44810E28770EF40069AC0B /* MusicLoadingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A44810D28770EF40069AC0B /* MusicLoadingFooter.swift */; };
+		9A448111287806E10069AC0B /* AppsCompositionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A448110287806E10069AC0B /* AppsCompositionalView.swift */; };
 		9ACAB72B285759B700DF12E0 /* AppDeatilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB72A285759B700DF12E0 /* AppDeatilController.swift */; };
 		9ACAB72E2857625B00DF12E0 /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB72D2857625B00DF12E0 /* AppDetailCell.swift */; };
 		9ACAB731285C551C00DF12E0 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAB730285C551C00DF12E0 /* PreviewCell.swift */; };
@@ -65,6 +66,7 @@
 		9A4481082877093F0069AC0B /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
 		9A44810B28770B5A0069AC0B /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		9A44810D28770EF40069AC0B /* MusicLoadingFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLoadingFooter.swift; sourceTree = "<group>"; };
+		9A448110287806E10069AC0B /* AppsCompositionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsCompositionalView.swift; sourceTree = "<group>"; };
 		9ACAB72A285759B700DF12E0 /* AppDeatilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDeatilController.swift; sourceTree = "<group>"; };
 		9ACAB72D2857625B00DF12E0 /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
 		9ACAB730285C551C00DF12E0 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
@@ -158,6 +160,14 @@
 			path = Music;
 			sourceTree = "<group>";
 		};
+		9A44810F287806BF0069AC0B /* Compositional */ = {
+			isa = PBXGroup;
+			children = (
+				9A448110287806E10069AC0B /* AppsCompositionalView.swift */,
+			);
+			path = Compositional;
+			sourceTree = "<group>";
+		};
 		9ACAB729285759A000DF12E0 /* Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +258,7 @@
 		CE638697270D974C0090396C /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				9A44810F287806BF0069AC0B /* Compositional */,
 				9ACAB729285759A000DF12E0 /* Details */,
 				CE638698270D975A0090396C /* AppsPageController.swift */,
 				CE6386A0270DA1AE0090396C /* AppsHorizontalController.swift */,
@@ -445,6 +456,7 @@
 				CE898ACD279163A0007115BF /* BetterSnappingLayout.swift in Sources */,
 				CE6CDB4F26FE3C9E00A9E227 /* AppDelegate.swift in Sources */,
 				9ACAB761285CC70100DF12E0 /* ReviewCell.swift in Sources */,
+				9A448111287806E10069AC0B /* AppsCompositionalView.swift in Sources */,
 				CE70983627219EF200F9CA81 /* SocialApp.swift in Sources */,
 				9A44810E28770EF40069AC0B /* MusicLoadingFooter.swift in Sources */,
 				CE05EA7C2705B813002BEE4C /* SearchResult.swift in Sources */,
