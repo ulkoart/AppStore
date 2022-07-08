@@ -18,9 +18,20 @@ struct Result: Decodable {
     let trackName: String
     let primaryGenreName: String
     let averageUserRating: Float?
-    let screenshotUrls: [String]
+    let screenshotUrls: [String]?
     let artworkUrl100: String // app icon
 	var formattedPrice: String?
-	let description: String
+	let description: String?
 	var releaseNotes: String?
+}
+
+
+struct SearchResultMusic: Codable {
+	let resultCount: Int
+	let results: [ResultMusic]
+}
+
+struct ResultMusic: Codable {
+	let artistName, collectionName, collectionCensoredName: String
+	let artworkUrl100: String
 }

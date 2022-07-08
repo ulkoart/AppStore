@@ -19,14 +19,14 @@ class SearchResultCell: UICollectionViewCell {
             let url = URL(string: appResult.artworkUrl100)
             appIconImageView.sd_setImage(with: url)
             
-            screenshot1ImageViwe.sd_setImage(with: URL(string: appResult.screenshotUrls[0]))
+			screenshot1ImageViwe.sd_setImage(with: URL(string: appResult.screenshotUrls![0]))
             
-            if appResult.screenshotUrls.count > 1 {
-                screenshot2ImageViwe.sd_setImage(with: URL(string: appResult.screenshotUrls[1]))
+			if appResult.screenshotUrls!.count > 1 {
+				screenshot2ImageViwe.sd_setImage(with: URL(string: appResult.screenshotUrls![1]))
             }
             
-            if appResult.screenshotUrls.count > 2 {
-                screenshot3ImageViwe.sd_setImage(with: URL(string: appResult.screenshotUrls[2]))
+			if appResult.screenshotUrls!.count > 2 {
+				screenshot3ImageViwe.sd_setImage(with: URL(string: appResult.screenshotUrls![2]))
             }
         }
     }
