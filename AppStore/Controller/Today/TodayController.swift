@@ -16,7 +16,7 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout, U
 	var appFullscreenController: AppFullscreenController!
 	
 	let activityIndicator: UIActivityIndicatorView = {
-		let avi = UIActivityIndicatorView(style: .whiteLarge)
+		let avi = UIActivityIndicatorView(style: .large)
 		avi.color = .darkGray
 		avi.hidesWhenStopped = true
 		return avi

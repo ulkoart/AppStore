@@ -14,7 +14,7 @@ class AppsPageController: BaseListController {
     private let headerId = "headerId"
     
     let activityIndicatorView: UIActivityIndicatorView = {
-        let aiv = UIActivityIndicatorView(style: .whiteLarge)
+        let aiv = UIActivityIndicatorView(style: .large)
         aiv.color = .black
         aiv.startAnimating()
         aiv.hidesWhenStopped = true
