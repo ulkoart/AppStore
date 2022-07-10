@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = BaseTabBarController()
         window?.makeKeyAndVisible()
-                                    
         return true
     }
 }

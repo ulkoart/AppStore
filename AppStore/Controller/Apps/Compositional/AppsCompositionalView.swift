@@ -162,14 +162,42 @@ class CompositionalController: UICollectionViewController {
 		navigationItem.title = "Apps"
 		navigationController?.navigationBar.prefersLargeTitles = true
 		
+		navigationItem.rightBarButtonItem = .init(title: "Fetch Top Free", style: .plain, target: self, action: #selector(handleFetchTopFree))
+		
+		collectionView.refreshControl = UIRefreshControl()
+		collectionView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+		
 //        fetchApps()
 		setupDiffableDatasource()
 	}
+	
+	@objc func handleRefresh() {
+		collectionView.refreshControl?.endRefreshing()
+		
+		var snapshot = self.diffableDataSource.snapshot()
+		
+		snapshot.deleteSections([.topFree, .games, .grossing])
+		
+		self.diffableDataSource.apply(snapshot)
+	}
+	
+	@objc func handleFetchTopFree() {
+		ServiceAPI.shared.fetchAppGroup(urlString: "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/25/apps.json") { (appGroup, err) in
+			var snapshot = self.diffableDataSource.snapshot()
+
+			snapshot.insertSections([.topFree], afterSection: .topSocial)
+			snapshot.appendItems(appGroup?.feed.results ?? [], toSection: .topFree)
+
+			self.diffableDataSource.apply(snapshot)
+		}
+	}
+
 	
 	enum AppSection {
 		case topSocial
 		case grossing
 		case games
+		case topFree
 	}
 	
 	lazy var diffableDataSource: UICollectionViewDiffableDataSource<AppSection, AnyHashable> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewCell? in
@@ -231,10 +259,12 @@ class CompositionalController: UICollectionViewController {
 			if let object = self.diffableDataSource.itemIdentifier(for: indexPath) {
 				if let section = snapshot.sectionIdentifier(containingItem: object) {
 					if section == .games {
-						header.label.text = "Games"
-					} else {
-						header.label.text = "Top Grossing"
-					}
+						  header.label.text = "Games"
+					  } else if section == .grossing {
+						  header.label.text = "Top Grossing"
+					  } else {
+						  header.label.text = "Top Free"
+					  }
 				}
 			}
 			return header
@@ -273,7 +303,7 @@ extension CompositionalController {
 				self.games = appGroup
 				ServiceAPI.shared.fetchTopGrossing { (appGroup, err) in
 					self.topGrossingApps = appGroup
-					ServiceAPI.shared.fetchAppGroup(urlString: "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/all/25/explicit.json") { (appGroup, err) in
+					ServiceAPI.shared.fetchAppGroup(urlString: "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/25/apps.json") { (appGroup, err) in
 						self.freeApps = appGroup
 						DispatchQueue.main.async {
 							self.collectionView.reloadData()
@@ -300,7 +330,7 @@ extension CompositionalController {
 		}
 		
 		dispatchGroup.enter()
-		ServiceAPI.shared.fetchAppGroup(urlString: "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/all/25/explicit.json") { (appGroup, err) in
+		ServiceAPI.shared.fetchAppGroup(urlString: "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/25/apps.json") { (appGroup, err) in
 			self.freeApps = appGroup
 			dispatchGroup.leave()
 		}
